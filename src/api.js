@@ -24,7 +24,7 @@ export const getTopics = () => {
 
 export const getArticlesById = (articleId) => {
     return myApi.get(`/api/articles/${articleId}`).then((res) => {
-        return res.data.articles;
+        return res.data.article;
       });
 }
 

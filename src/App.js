@@ -2,6 +2,7 @@ import './App.css';
 import {Header} from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import {ArticleList} from "./components/ArticleList";
+import { SingleArticle } from './components/SingleArticle';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
           path="/"
           element={<ArticleList />}
         ></Route>
-        {/* <Route path="/:singleItem_slug" element={<SingleItem />}></Route> */}
+        <Route path="/articles/:articleId" element={<SingleArticle />}></Route>
       </Routes>
     </div>
   );

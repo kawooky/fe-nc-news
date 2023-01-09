@@ -4,7 +4,7 @@ export const ArticleCard = ({article_id, title, topic, author, body, created_at,
     return (
         
         <article className='article-card'>
-            <Link to={`/${article_id}`}>
+            <Link to={`/articles/${article_id}`}>
             <h2>{title}</h2>
             </Link>
             <h3>Topic: {topic}</h3>
