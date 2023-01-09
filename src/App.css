@@ -3,8 +3,19 @@
   /* font-family: Papyrus,fantasy; */
 }
 
-.article-list {
+/* .article-list {
   display: flex;
   flex-wrap:wrap;
   list-style-type: none;
+} */
+
+.article-card {
+  text-align: left;
+  float: left;
+  background-color: rgb(212, 212, 212);
+  margin: 1em;
+  padding: 1em;
+  border-radius: 30px;
+  font-size: 1rem;
+  /* width: 20rem; */
 }
