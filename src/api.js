@@ -10,18 +10,6 @@ export const getArticles = () => {
       });
 }
 
-export const getUsers = () => {
-    return myApi.get(`/api/users`).then((res) => {
-        return res.data.users;
-      });
-}
-
-export const getTopics = () => {
-    return myApi.get(`/api/topics`).then((res) => {
-        return res.data.topics;
-      });
-}
-
 export const getArticlesById = (articleId) => {
     return myApi.get(`/api/articles/${articleId}`).then((res) => {
         return res.data.article;
@@ -30,7 +18,7 @@ export const getArticlesById = (articleId) => {
 
 export const getCommentsByArticleId = (articleId) => {
     return myApi.get(`/api/articles/${articleId}/comments`).then((res) => {
-        return res.data.articles;
+        return res.data.comments;
       });
 }
 

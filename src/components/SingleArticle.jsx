@@ -1,20 +1,28 @@
 import { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import { getArticlesById } from '../api';
+import { Comments } from './Comments';
 
 
 export const SingleArticle = () => {
     const [singleArticle, setSingleArticle] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const {articleId} = useParams();
 
     useEffect(()=>{
         getArticlesById(articleId).then((articleData) => {
             setSingleArticle(articleData)
+            setIsLoading(false)
         })
     }, [articleId])
 
+    if (isLoading) {
+        return <div>Loading...</div>
+    }
+
     return (
-        <div>
+        <>
+                <div className='single-article-info'>
             <h2>{singleArticle.title}</h2>
             <h3>Topic: {singleArticle.topic}</h3>
             <h3>Author: {singleArticle.author}</h3>
@@ -23,5 +31,9 @@ export const SingleArticle = () => {
             <p>Votes: {singleArticle.votes}</p>
             <p>Comment Count: {singleArticle.comment_count}</p>
         </div>
+            <Comments articleId={articleId} />
+        </>
+
+
     )
 }
