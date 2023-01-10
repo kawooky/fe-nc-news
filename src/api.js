@@ -22,5 +22,13 @@ export const getCommentsByArticleId = (articleId) => {
       });
 }
 
+export const patchVote = (article_id, vote) => {
+    return myApi.patch(`/api/articles/${article_id}`, {"inc_votes":vote} ).then((res) => {
+        return res;
+      });
+}
+
+// .article.votes
+
 
 
