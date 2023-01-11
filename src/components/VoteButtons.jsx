@@ -18,7 +18,7 @@ export const VoteButtons = ({article_id, setIncVotes, incVotes}) => {
               });
         }
 
-        if ((vote===1 && incVotes === 1)) {
+        if ((vote===1 && incVotes === 1)|| (vote===-1 && incVotes === -1)) {
             setIncVotes(0)
             patchVote(article_id, -vote).then(()=>{
             }).catch((err) => {
@@ -26,24 +26,13 @@ export const VoteButtons = ({article_id, setIncVotes, incVotes}) => {
                 setErr('Something went wrong, please try again.');
               });
         }
-
-        if ((vote===-1 && incVotes === -1)) {
-            setIncVotes(0)
-            patchVote(article_id, -vote).then(()=>{
-            }).catch((err) => {
-                setIncVotes(0)
-                setErr('Something went wrong, please try again.');
-              });
-        }
-
-
     }
 
     if (err) return <p>{err}</p>;
     return (<>
-        <button onClick={()=>incrementVote(1)}><BiUpvote/></button>
-        
-        <button onClick={()=>incrementVote(-1)} ><BiDownvote/></button>
+        <button onClick={()=>{incrementVote(1)}}  style={{ backgroundColor: incVotes===1 ? "green" : "white" }}><BiUpvote/></button>
+
+        <button onClick={()=>incrementVote(-1)} style={{ backgroundColor: incVotes===-1 ? "red" : "white" }}><BiDownvote/></button>
     </>
     )
 }

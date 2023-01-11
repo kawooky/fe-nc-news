@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../api";
+import { AddComment } from "./AddComment";
 import { CommentCard } from "./CommentCard";
 
 export const Comments = ({articleId}) => {
@@ -20,6 +21,8 @@ export const Comments = ({articleId}) => {
 
     return (
         <div className='comments'>
+            <AddComment/>
+
             <h2>Comments Section:</h2>
             <ul>
             {comments.map((comment) => {
