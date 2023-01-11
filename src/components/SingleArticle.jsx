@@ -5,7 +5,7 @@ import { Comments } from './Comments';
 import { VoteButtons } from './VoteButtons';
 
 
-export const SingleArticle = () => {
+export const SingleArticle = ({username}) => {
     const [singleArticle, setSingleArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const {articleId} = useParams();
@@ -35,7 +35,7 @@ export const SingleArticle = () => {
             <p>Comment Count: {singleArticle.comment_count}</p>
             <VoteButtons {...props}/>
         </div>
-            <Comments articleId={articleId} />
+            <Comments articleId={articleId} username={username}/>
         </>
 
 

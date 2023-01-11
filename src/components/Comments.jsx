@@ -3,7 +3,7 @@ import { getCommentsByArticleId } from "../api";
 import { AddComment } from "./AddComment";
 import { CommentCard } from "./CommentCard";
 
-export const Comments = ({articleId}) => {
+export const Comments = ({articleId, username}) => {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true);
 
@@ -18,10 +18,10 @@ export const Comments = ({articleId}) => {
         return <div>Loading...</div>
     }
 
-
+    
     return (
         <div className='comments'>
-            <AddComment/>
+            <AddComment article_id={articleId} setComments={setComments} username={username}/>
 
             <h2>Comments Section:</h2>
             <ul>

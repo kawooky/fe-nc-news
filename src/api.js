@@ -28,7 +28,19 @@ export const patchVote = (article_id, vote) => {
       });
 }
 
-// .article.votes
+export const postComment = (article_id, commentText, username) => {
+    return myApi.post(`/api/articles/${article_id}/comments`, {username: username, body: commentText})
+    .then((res) => {
+        return res.data.comment
+    })
+}
+
+export const getUsers = () => {
+    return myApi.get(`/api/users`).then((res) => {
+        return res.data.users;
+      });
+}
+
 
 
 
