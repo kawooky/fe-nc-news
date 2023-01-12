@@ -21,7 +21,7 @@ export const NavBar = () => {
             <h2>Topics:</h2>
                 {allTopics.map((topic)=> {
                     return (
-                        <Link to={`/articles/${topic}`}>
+                        <Link to={`/articles/topics/${topic}`}>
                             <h3 key={topic}>{topic}</h3>
                         </Link>)})}
         </div>

@@ -18,7 +18,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<ArticleList articles={articles} setArticles={setArticles}/>}></Route>
-        <Route path="/articles/:topic" element={<ArticlesByTopic articles={articles}/>}></Route>
+        <Route path="/articles/topics/:topic" element={<ArticlesByTopic articles={articles}/>}></Route>
         <Route path="/articles/:articleId" element={<SingleArticle username={username}/>}></Route>
       </Routes>
     </div>
