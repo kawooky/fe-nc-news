@@ -9,7 +9,6 @@ import { ArticlesByTopic } from './components/ArticlesByTopic';
 
 function App() {
   const [username, setUsername] =useState('')
-  const [articles, setArticles] = useState([]);
 
 
   return (
@@ -17,8 +16,8 @@ function App() {
       <Header setUsername={setUsername}/>
       <NavBar />
       <Routes>
-        <Route path="/" element={<ArticleList articles={articles} setArticles={setArticles}/>}></Route>
-        <Route path="/articles/topics/:topic" element={<ArticlesByTopic articles={articles}/>}></Route>
+        <Route path="/" element={<ArticleList />}></Route>
+        <Route path="/articles/topics/:topic" element={<ArticlesByTopic/>}></Route>
         <Route path="/articles/:articleId" element={<SingleArticle username={username}/>}></Route>
       </Routes>
     </div>

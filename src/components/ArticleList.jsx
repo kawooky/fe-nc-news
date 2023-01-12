@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../api";
 import { ArticleCard } from "./ArticleCard";
 
-export const ArticleList = ({articles, setArticles}) => {
-
+export const ArticleList = () => {
+    const [articles, setArticles] = useState([]);
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +20,6 @@ export const ArticleList = ({articles, setArticles}) => {
         return <div>Loading...</div>
     }
 
-    console.log(articles)
 
     return (
         <div className="article-list">

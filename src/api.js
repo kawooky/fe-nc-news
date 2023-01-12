@@ -47,6 +47,9 @@ export const getTopics = () => {
       });
 }
 
-
-
+export const getArticlesByTopic = (topic) => {
+    return myApi.get(`/api/articles?topic=${topic}`).then((res) => {
+        return res.data.articles;
+      });
+}
 
