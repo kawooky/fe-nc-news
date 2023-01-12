@@ -41,6 +41,12 @@ export const getUsers = () => {
       });
 }
 
+export const getTopics = () => {
+    return myApi.get(`/api/topics`).then((res) => {
+        return res.data.topics;
+      });
+}
+
 
 
 

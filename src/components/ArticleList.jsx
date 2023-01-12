@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../api";
 import { ArticleCard } from "./ArticleCard";
 
-export const ArticleList = () => {
-    const [articles, setArticles] = useState([]);
+export const ArticleList = ({articles, setArticles}) => {
 
 
     const [isLoading, setIsLoading] = useState(true);
@@ -15,11 +14,13 @@ export const ArticleList = () => {
             setArticles(articleArray)
             setIsLoading(false)
         })
-    }, [])
+    }, [setArticles, setIsLoading])
 
     if (isLoading) {
         return <div>Loading...</div>
     }
+
+    console.log(articles)
 
     return (
         <div className="article-list">
