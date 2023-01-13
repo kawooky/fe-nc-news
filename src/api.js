@@ -54,8 +54,6 @@ export const getTopics = () => {
 }
 
 export const deleteCommentById = (comment_id) => {
-    return myApi.delete(`/api/comments/${comment_id}`).catch((err)=>{
-        console.log(err)
-    })
+    return myApi.delete(`/api/comments/${comment_id}`)
 }
 
