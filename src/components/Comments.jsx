@@ -5,6 +5,7 @@ import { CommentCard } from "./CommentCard";
 
 export const Comments = ({articleId, username}) => {
     const [comments, setComments] = useState([])
+    const [deletedCommentId, setDeletedCommentID] = useState('')
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -12,13 +13,12 @@ export const Comments = ({articleId, username}) => {
             setComments(commentData)
             setIsLoading(false)
         })
-    }, [articleId])
+    }, [articleId, deletedCommentId])
 
     if (isLoading) {
         return <div>Loading...</div>
     }
 
-    
     return (
         <div className='comments'>
             <AddComment article_id={articleId} setComments={setComments} username={username}/>
@@ -26,7 +26,7 @@ export const Comments = ({articleId, username}) => {
             <h2>Comments Section:</h2>
             <ul>
             {comments.map((comment) => {
-               return <CommentCard key={comment.comment_id} {...comment} />;
+               return <CommentCard key={comment.comment_id} username={username} comment_id={comment.comment_id} body={comment.body} votes={comment.votes} author={comment.author} created_at={comment.created_at} deletedCommentId={deletedCommentId} setDeletedCommentID={setDeletedCommentID}/>;
             })}
              </ul>
         </div>

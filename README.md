@@ -3,7 +3,7 @@ Link to deployed version:
 General Info:
 -This project was created during my time on the NorthCoders boot-camp.
 -This website is an example of a social news website and forum where content is socially curated and promoted by site members through voting.
--This front end project uses my hosted api from the back end project (backend repo and hosted api link below) to make GET, POST and PATCH requests.
+-This front end project uses my hosted api from the back end project (backend repo and hosted api link below) to make GET, POST, PATCH and DELETE requests.
 -My react app uses browser router to change elements according to the path.
 -It also uses concepts such as optimistic rendering, useState and useEffect.
 -Features of the app include adding a comment to an article, voting up or down, filtering articles and selecting a user.
