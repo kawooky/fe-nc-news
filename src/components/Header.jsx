@@ -15,13 +15,13 @@ export const Header = ({setUsername}) => {
         })
     } , [])
   return (
-    <div>
+    <div className='header'>
     <Link to="/">
     <h1 className="app-header">NC-NEWS</h1>
     </Link>
 
     <select name="select-username" id="select-username" onChange={(event) => setUsername(event.target.value)}>
-        <option value='' default>Select</option>
+        <option value='' default>Select User</option>
         {allUsernames.map((username)=> {
             return (
                 <option value={username} key={username}>{username}</option>)})}

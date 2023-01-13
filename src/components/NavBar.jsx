@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getTopics } from "../api";
 
-export const NavBar = () => {
+export const NavBar = ({setTopic}) => {
     const[allTopics, setAllTopics] =useState([])
 
 
@@ -18,12 +18,13 @@ export const NavBar = () => {
 
     return (
         <div className='nav-bar'>
-            <h2>Topics:</h2>
+            
+            <Link to="/"> 
+            <h2>Current Topics:</h2>
                 {allTopics.map((topic)=> {
-                    return (
-                        <Link to={`/articles/topics/${topic}`}>
-                            <h3 key={topic}>{topic}</h3>
-                        </Link>)})}
+                    return (                   
+                    <button key={topic} onClick={()=>{setTopic(topic)}} value={topic}className='topic-buttons'><h2>{topic}</h2> </button>)})}
+            </Link>
         </div>
     )
 }
