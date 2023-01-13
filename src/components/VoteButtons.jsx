@@ -29,10 +29,11 @@ export const VoteButtons = ({article_id, setIncVotes, incVotes}) => {
     }
 
     if (err) return <p>{err}</p>;
-    return (<>
-        <button onClick={()=>{incrementVote(1)}}  style={{ backgroundColor: incVotes===1 ? "green" : "white" }}><BiUpvote/></button>
-
-        <button onClick={()=>incrementVote(-1)} style={{ backgroundColor: incVotes===-1 ? "red" : "white" }}><BiDownvote/></button>
-    </>
+    return (
+        <div>
+            <button onClick={()=>{incrementVote(1)}}  style={{ backgroundColor: incVotes===1 ? "green" : "white" }}><BiUpvote/></button>
+            <br></br>
+            <button onClick={()=>incrementVote(-1)} style={{ backgroundColor: incVotes===-1 ? "red" : "white" }}><BiDownvote/></button>
+        </div>
     )
 }

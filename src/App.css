@@ -1,29 +1,120 @@
-.App {
-  text-align: center;
-  /* font-family: Papyrus,fantasy; */
+body {
+  background-color: black;
+  color: white
 }
 
-/* .article-list {
+a {
+  color: white;
+}
+
+
+.App {
+  text-align: center;
+  display: grid ;
+  grid-template-areas: 
+  'header nav'
+  'header list'
+  'header comments'
+;
+}
+
+
+.nav-bar {
+  grid-area: nav;
   display: flex;
   flex-wrap:wrap;
-  list-style-type: none;
-} */
+  margin-left: 3em;
+}
+
+
+.nav-bar h2{
+  display: inline-block;
+  width:12rem
+}
+
+.header {
+  grid-area: header;
+  width:20rem;
+  height: 20rem
+}
+
+.article-list {
+  grid-area: list;
+  /* width:50%; */
+}
 
 .article-card {
+  display: grid ;
+  grid-template-areas: 'votes article';
+  align-items: center;
+  justify-content: center;
+  border-color:dimgray;
+  border-style: solid;
   text-align: left;
   float: left;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(4, 3, 3);
   margin: 1em;
   padding: 1em;
   border-radius: 30px;
   font-size: 1rem;
-  /* width: 20rem; */
+}
+.article-info {
+  grid-area: article;
 }
 
+
+.votes {
+  grid-area: votes;
+  display: flex;
+  width:3.5rem
+}
+
+.comments {
+  grid-area:comments;
+
+  align-items: center;
+  justify-content: center;
+  border-color:dimgray;
+  border-style: solid;
+  text-align: left;
+  float: left;
+  background-color: rgb(4, 3, 3);
+  margin: 1em;
+  padding: 1em;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
 .comment-card {
+
   margin: 1em;
   padding: 1em;
   border-radius: 30px;
   border: 0.3em;
   border-style: solid;
+}
+
+.add-comment {
+  margin-left: 10rem;
+  padding: 0rem;
+}
+
+.add-comment-box {
+  width: 80%;
+  padding: 12px;
+  margin: 8px;
+  box-sizing: border-box;
+
+}
+
+.topic-buttons{
+  background-color: black;
+  color: white;
+  border: black
 }

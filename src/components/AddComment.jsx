@@ -27,7 +27,7 @@ export const AddComment = ({article_id, setComments, username}) => {
     return (
         <div className="add-comment">
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Write a comment..." value={commentText} name="commentText" onChange={(event) => setCommentText(event.target.value)
+                <input className='add-comment-box' type="text" placeholder="Write a comment..." value={commentText} name="commentText" onChange={(event) => setCommentText(event.target.value)
         }/>
                 <input type="submit"/>
             </form>

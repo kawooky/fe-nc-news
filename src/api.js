@@ -4,10 +4,16 @@ const myApi = axios.create({
   baseURL: "https://nc-news-server.onrender.com",
 });
 
-export const getArticles = () => {
-    return myApi.get(`/api/articles`).then((res) => {
-        return res.data.articles;
-      });
+export const getArticles = (sort_by = "created_at", order = "DESC", topic=false) => {
+    if (!topic) {
+        return myApi.get(`/api/articles?sort_by=${sort_by}&order=${order}`).then((res) => {
+            return res.data.articles;
+          });
+    } else {
+        return myApi.get(`/api/articles?topic=${topic}&sort_by=${sort_by}&order=${order}`).then((res) => {
+            return res.data.articles;
+          });
+    }
 }
 
 export const getArticlesById = (articleId) => {
@@ -41,6 +47,15 @@ export const getUsers = () => {
       });
 }
 
+export const getTopics = () => {
+    return myApi.get(`/api/topics`).then((res) => {
+        return res.data.topics;
+      });
+}
 
-
+// export const getArticlesByTopic = (topic) => {
+//     return myApi.get(`/api/articles?topic=${topic}`).then((res) => {
+//         return res.data.articles;
+//       });
+// }
 

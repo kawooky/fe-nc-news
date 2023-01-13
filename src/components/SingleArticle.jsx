@@ -23,17 +23,36 @@ export const SingleArticle = ({username}) => {
         return <div>Loading...</div>
     }
 
+    let date = new Date(singleArticle.created_at).toLocaleString("en-GB", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+    });
+
+
     return (
         <>
-            <div className='single-article-info'>
+            <div className='article-card'>
+
+            <div className="votes">
+                <VoteButtons {...props}/>
+            <p>&nbsp; {singleArticle.votes+incVotes}</p>
+            </div>
+
+            <div className='article-info'>
             <h2>{singleArticle.title}</h2>
             <h3>Topic: {singleArticle.topic}</h3>
             <h3>Author: {singleArticle.author}</h3>
-            <h4>Body: {singleArticle.body}</h4>
-            <p>Created At: {singleArticle.created_at}</p>
-            <p>Votes: {singleArticle.votes+ incVotes}</p>
+            <h4>{singleArticle.body}</h4>
+            <p>Created At: {date}</p>
             <p>Comment Count: {singleArticle.comment_count}</p>
-            <VoteButtons {...props}/>
+            </div>
+
         </div>
             <Comments articleId={articleId} username={username}/>
         </>
