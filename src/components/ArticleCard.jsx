@@ -32,10 +32,8 @@ export const ArticleCard = ({article_id, title, topic, author, body, created_at,
             </Link>
             <h3>Topic: {topic}</h3>
             <h3>Author: {author}</h3>
-            <h4>Body: {body}</h4>
+            <h4>{body}</h4>
             <p>Created At: {date}</p>
-            
-            
             <p>Comment Count: {comment_count}</p>
             </div>
 

@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header setUsername={setUsername}/>
-      <NavBar setTopic={setTopic}/>
+      <NavBar topic={topic} setTopic={setTopic}/>
       <Routes>
         <Route path="/" element={<ArticleList topic={topic}/>}></Route>
         <Route path="/articles/:articleId" element={<SingleArticle username={username}/>}></Route>
