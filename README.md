@@ -1,4 +1,4 @@
-Link to deployed version:
+Link to deployed version: https://youssefkawook-nc-news.netlify.app/
 
 General Info:
 -This project was created during my time on the NorthCoders boot-camp.
