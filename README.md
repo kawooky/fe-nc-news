@@ -10,7 +10,7 @@ General Info:<br>
 
 
 Link to backend repo:https://github.com/kawooky/be-nc-news<br>
-Link to hosted api: https://nc-news-server.onrender.com
+Link to hosted api: https://nc-news-server.onrender.com/api
 
 Minimum version of Node: v19.0.0
 
