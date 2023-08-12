@@ -1,0 +1,29 @@
+@import '../root.css';
+
+
+.articleCard {
+
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--two);
+    width:auto;
+    /* margin: var(--margin); */
+    padding:30px;
+    background-color: var(--three);
+  }
+
+
+  .commentsAndDate {
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .link {
+    color: var(--two);
+    text-decoration: none;
+  }
+
+  .titleAndTopic {
+    display:flex;
+    justify-content: space-between;
+  }

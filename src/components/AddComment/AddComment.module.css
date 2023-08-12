@@ -1,0 +1,23 @@
+@import '../root.css';
+
+
+.addComment {
+    display:flex;
+    align-items: center;
+  }
+  
+  .addCommentBox {
+    width: 400px;
+    padding: 12px;
+    margin: 8px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: var(--two);
+    border: 1px solid var(--two);
+  }
+
+  .sendButton {
+    background-color: transparent;
+    border: none;
+    color: var(--two);
+  }

@@ -1,4 +1,4 @@
-import { deleteCommentById } from "../api"
+import { deleteCommentById } from "../../api"
 
 
 

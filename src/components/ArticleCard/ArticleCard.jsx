@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {Link} from "react-router-dom";
-import { VoteButtons } from "./VoteButtons";
+import { VoteButtons } from "../VoteButtons/VoteButtons";
+import styles from './ArticleCard.module.css'
 
 export const ArticleCard = ({article_id, title, topic, author, body, created_at, votes, comment_count}) => {
 
@@ -21,24 +22,28 @@ export const ArticleCard = ({article_id, title, topic, author, body, created_at,
 
     return (
         
-        <article className='article-card'>
+        <div className={styles.articleCard}>
             <div className="votes">
                 <VoteButtons {...props}/>
             <p>&nbsp; {votes+incVotes}</p>
             </div>
+            <Link to={`/articles/${article_id}`}  className={styles.link}>
             <div className='article-info'>
-            <Link to={`/articles/${article_id}`}>
-            <h2>{title}</h2>
-            </Link>
-            <h3>Topic: {topic}</h3>
+                <div className={styles.titleAndTopic}>
+                    <h2>{title}</h2>
+                    <h3>({topic})</h3>
+                </div>
             <h3>Author: {author}</h3>
             <h4>{body}</h4>
-            <p>Created At: {date}</p>
-            <p>Comment Count: {comment_count}</p>
+            <div className={styles.commentsAndDate}>
+            <p>Comments: {comment_count}</p>
+            <p>{date}</p>
+            </div>
             </div>
 
+            </Link>
 
-        </article>
+        </div>
         
     )
 }

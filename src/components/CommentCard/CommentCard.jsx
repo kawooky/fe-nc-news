@@ -1,8 +1,20 @@
-import { DeleteButton } from "./DeleteButton";
+import { DeleteButton } from "../DeleteButton/DeleteButton";
 import { useState } from "react";
+import styles from './CommentCard.module.css'
 
 export const CommentCard =({username, comment_id, body, votes, author, created_at, deletedCommentId, setDeletedCommentId}) => {
     const [err, setErr] = useState(null);
+
+    let date = new Date(created_at).toLocaleString("en-GB", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+    });
 
 
     if (err) return (
@@ -20,11 +32,13 @@ export const CommentCard =({username, comment_id, body, votes, author, created_a
 
 
     return (
-        <div className='comment-card'>
+        <div className={styles.commentCard}>
             <h3>Author: {author}</h3>
             <h4>{body}</h4>
+            <div className={styles.votesAndDate}>
             <p>Votes: {votes}</p>
-            <p>Created At:{created_at}</p>
+            <p>{date}</p>
+            </div>
             {username === author? <DeleteButton comment_id={comment_id} deletedCommentId={deletedCommentId} setDeletedCommentId={setDeletedCommentId} err={err} setErr={setErr}/> : <p></p>}
             <p>{err ? err : ''}</p>
 

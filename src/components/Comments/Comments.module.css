@@ -1,0 +1,40 @@
+@import '../root.css';
+
+
+
+.comments {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background-color: var(--three);
+
+    border: 1px solid var(--two);
+    width:auto;
+    margin: var(--margin);
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 0px;
+    padding:30px
+
+  }
+
+.loading {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: var(--margin)
+}
+
+  .commentsText {
+    margin-right: auto;
+  }
+
+
+

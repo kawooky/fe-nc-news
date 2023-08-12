@@ -1,4 +1,4 @@
-Link to deployed version:
+Link to deployed version: 
 
 General Info:
 -This project was created during my time on the NorthCoders boot-camp.
