@@ -1,5 +1,6 @@
 Link to deployed version: https://youssefkawook-nc-news.netlify.app/
 
+
 General Info:<br>
 -This project was created during my time on the NorthCoders boot-camp.<br>
 -This website is an example of a social news website and forum where content is socially curated and promoted by site members through voting.<br>

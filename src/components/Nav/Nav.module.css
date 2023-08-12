@@ -1,0 +1,36 @@
+@import '../root.css';
+
+.nav {
+    display: flex;
+    width: auto;
+    height:100px;
+    background-color: var(--three);
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid white;
+    font-size: 25px;
+    margin: var(--margin);
+    box-sizing: border-box;
+    margin-bottom: 0px;
+}
+
+.link {
+    color: var(--two);
+    text-decoration: none;
+}
+
+
+.logIn {
+    height: 50px;
+    /* width:100px; */
+    width:auto;
+    /* border-radius: 55px; */
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+

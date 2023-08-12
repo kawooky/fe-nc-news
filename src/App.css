@@ -1,4 +1,18 @@
-body {
+@import './components/root.css';
+
+
+.App {
+  background-color: var(--one);
+  color: var(--two);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+}
+
+
+
+/* body {
   background-color: black;
   color: white
 }
@@ -40,7 +54,6 @@ a {
 
 .article-list {
   grid-area: list;
-  /* width:50%; */
 }
 
 .article-card {
@@ -117,4 +130,4 @@ a {
   background-color: black;
   color: white;
   border: black
-}
+} */

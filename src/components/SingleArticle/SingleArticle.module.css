@@ -1,0 +1,17 @@
+@import '../root.css';
+
+.singleArticle {
+    margin: var(--margin);
+}
+
+
+.loading {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: var(--margin)
+}

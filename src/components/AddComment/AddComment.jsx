@@ -1,6 +1,8 @@
 import { useState } from "react"
-import { postComment } from "../api"
-
+import { postComment } from "../../api"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import styles from './AddComment.module.css'
 
 export const AddComment = ({article_id, setComments, username}) => {
 
@@ -16,6 +18,7 @@ export const AddComment = ({article_id, setComments, username}) => {
             postComment(article_id, commentText, username)
             .then((newComment) => {
                 setComments((currentComments)=> [newComment,...currentComments])
+                setCommentText('')
             }).catch((err) => {
                 setErr('oops something went wrong')
             })
@@ -25,11 +28,12 @@ export const AddComment = ({article_id, setComments, username}) => {
     }
 
     return (
-        <div className="add-comment">
+        <div className={styles.addComment}>
             <form onSubmit={handleSubmit}>
-                <input className='add-comment-box' type="text" placeholder="Write a comment..." value={commentText} name="commentText" onChange={(event) => setCommentText(event.target.value)
+                <input className={styles.addCommentBox} type="text" placeholder="Write a comment..." value={commentText} name="commentText" onChange={(event) => setCommentText(event.target.value)
         }/>
-                <input type="submit"/>
+
+        <button className={styles.sendButton} type='submit'><FontAwesomeIcon icon={faPaperPlane} size='2xl'/></button>
             </form>
             <p>{err ? err : ''}</p>
 

@@ -1,0 +1,13 @@
+@import '../root.css';
+
+.commentCard {
+
+    border-top: 1px solid var(--two);
+    width:auto;
+    padding:30px
+  }
+
+.votesAndDate {
+    display:flex;
+    justify-content: space-between;
+}

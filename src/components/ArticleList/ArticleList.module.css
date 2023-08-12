@@ -1,0 +1,20 @@
+@import '../root.css';
+
+.articleList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: var(--margin);
+}
+
+.loading {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    margin: var(--margin)
+}

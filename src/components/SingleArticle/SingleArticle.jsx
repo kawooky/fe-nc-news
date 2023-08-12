@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
-import { getArticlesById } from '../api';
-import { Comments } from './Comments';
-import { VoteButtons } from './VoteButtons';
+import { getArticlesById } from '../../api';
+import { Comments } from '../Comments/Comments';
+import { VoteButtons } from '../VoteButtons/VoteButtons';
+import styles from './SingleArticle.module.css'
+import { ArticleCard } from '../ArticleCard/ArticleCard';
 
 
 export const SingleArticle = ({username}) => {
@@ -20,7 +22,7 @@ export const SingleArticle = ({username}) => {
     }, [articleId])
 
     if (isLoading) {
-        return <div>Loading...</div>
+        return <div className={styles.loading}>Loading...</div>
     }
 
     let date = new Date(singleArticle.created_at).toLocaleString("en-GB", {
@@ -34,12 +36,12 @@ export const SingleArticle = ({username}) => {
         hour12: true
     });
 
-
+    // {article_id, title, topic, author, body, created_at, votes, comment_count}) 
     return (
         <>
-            <div className='article-card'>
+            <div className={styles.singleArticle}>
 
-            <div className="votes">
+            {/* <div className="votes">
                 <VoteButtons {...props}/>
             <p>&nbsp; {singleArticle.votes+incVotes}</p>
             </div>
@@ -51,7 +53,8 @@ export const SingleArticle = ({username}) => {
             <h4>{singleArticle.body}</h4>
             <p>Created At: {date}</p>
             <p>Comment Count: {singleArticle.comment_count}</p>
-            </div>
+            </div> */}
+            <ArticleCard {...singleArticle} />
 
         </div>
             <Comments articleId={articleId} username={username}/>
