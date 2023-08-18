@@ -1,4 +1,4 @@
-Link to deployed version: https://youssefkawook-nc-news.netlify.app/
+Link to deployed version: [https://youssefkawook-nc-news.netlify.app/](https://kawooky.github.io/fe-nc-news/)
 
 
 General Info:<br>
